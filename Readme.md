@@ -6,7 +6,7 @@ Submits prompts to multiple LLMs using Streamlit Chat Widgets, Snowflake's Compl
 
 ## Deployment Option 1:
 
-Create Streamlit app using Snowsight and replace default app code with code from `streamlit_app.py` file. 
+Create Streamlit app using Snowsight and replace default app code with code from `streamlit_app.py` file. Include packages using package picker in SiS UI. 
 
 ## Deployment Option 2:
 

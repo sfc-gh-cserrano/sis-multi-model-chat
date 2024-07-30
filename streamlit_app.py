@@ -26,6 +26,8 @@ def reset():
 def submit_prompt(prompt: str) -> None:
     """Submits prompt to LLM using `to_pandas() method with `block=false` argument. Returns a Snowpark Async Job"""
     for idx, model in enumerate(st.session_state["selected_models"]):
+        if not st.session_state["prompt_history"].get(idx):
+            st.session_state["prompt_history"][idx] = []
         try:
             with st.spinner("Awaiting response"):
                 comp_prompt = compose_prompt(st.session_state[prompt])

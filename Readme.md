@@ -16,6 +16,7 @@ CREATE OR REPLACE STAGE DB.ST_APPS.STAGE_NAME
 DIRECTORY=(ENABLE=TRUE);
 ```
 2- Upload the `streamli_app.py` and `environment.yml` files into the root of the stage. 
+
 3- Create Streamlit app using the code below. 
 ```sql
 CREATE STREAMLIT ASYNC_MULTI_MODEL_CHAT

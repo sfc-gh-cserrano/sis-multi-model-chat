@@ -2,22 +2,23 @@
 
 Submits prompts to multiple LLMs using Streamlit Chat Widgets, Snowflake's Complete function through Snowpark Async Methods.
 
-
-
 ## Deployment Option 1:
 
-Create Streamlit app using Snowsight and replace default app code with code from `streamlit_app.py` file. Include packages using package picker in SiS UI. 
+Create Streamlit app using Snowsight and replace default app code with code from `streamlit_app.py` file. Include packages using package picker in SiS UI.
 
 ## Deployment Option 2:
 
-1- Create a Snowflake Stage with Directory enabled. 
+1- Create a Snowflake Stage with Directory enabled.
+
 ```sql
 CREATE OR REPLACE STAGE DB.ST_APPS.STAGE_NAME
 DIRECTORY=(ENABLE=TRUE);
 ```
-2- Upload the `streamli_app.py` and `environment.yml` files into the root of the stage. 
 
-3- Create Streamlit app using the code below. 
+2- Upload the `streamli_app.py` and `environment.yml` files into the root of the stage.
+
+3- Create Streamlit app using the code below.
+
 ```sql
 CREATE STREAMLIT ASYNC_MULTI_MODEL_CHAT
   ROOT_LOCATION = '@DB.ST_APPS.STAGE_NAME'
@@ -33,12 +34,12 @@ graph TB;
 step1[Select Models]
 step2[Submit Prompt]
 step3[Compose Prompt]
-step4[For N models in Models] 
+step4[For N models in Models]
 step5[Submit Final Prompt]
 step6[Add to Prompt History]
 step7{Submit all?}
 step9[Render N number of columns]
-step10[For N models in Models] 
+step10[For N models in Models]
 step11{is async_job}
 step12{is_done}
 step13[mark as pending]

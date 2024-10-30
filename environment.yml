@@ -3,6 +3,7 @@ channels:
   - snowflake
 dependencies:
   - python=3.8.*
-  - snowflake-ml-python=1.5.3
+  - snowflake-ml-python=1.6.2
   - snowflake-snowpark-python=
   - streamlit=
+  - streamlit-extras=0.4.0
